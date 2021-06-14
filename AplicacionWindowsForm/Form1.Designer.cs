@@ -62,11 +62,13 @@ namespace AplicacionWindowsForm
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(177, 29);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Text = "programadornovato";
             // 
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(192, 83);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(177, 29);
             this.txtPass.TabIndex = 3;
             // 
@@ -113,7 +115,6 @@ namespace AplicacionWindowsForm
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "Formulario1";
-            this.Opacity = 0.7D;
             this.Text = "Formulario 1";
             this.ResumeLayout(false);
             this.PerformLayout();

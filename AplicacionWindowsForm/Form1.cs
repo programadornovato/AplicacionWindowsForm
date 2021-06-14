@@ -22,7 +22,10 @@ namespace AplicacionWindowsForm
         {
             if (txtUsuario.Text == "programadornovato" && txtPass.Text == "123")
             {
-                MessageBox.Show("Humano valido");
+                //MessageBox.Show("Humano valido");
+                Ventana2 v2 = new Ventana2();
+                v2.Show();
+                this.Hide();
             }
             else {
                 txtUsuario.Text = "programadornovato";
