@@ -17,9 +17,23 @@ namespace AplicacionWindowsForm
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola pinche humano");
+            if (txtUsuario.Text == "programadornovato" && txtPass.Text == "123")
+            {
+                MessageBox.Show("Humano valido");
+            }
+            else {
+                txtUsuario.Text = "programadornovato";
+                txtPass.Text = "123";
+                MessageBox.Show("Humano invalido");
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
