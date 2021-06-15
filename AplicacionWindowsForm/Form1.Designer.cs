@@ -30,67 +30,43 @@ namespace AplicacionWindowsForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formulario1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuNuevo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAbrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCerrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // menuStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuNuevo,
+            this.menuAbrir,
+            this.menuCerrar});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // label2
+            // menuNuevo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Pass";
+            this.menuNuevo.Name = "menuNuevo";
+            this.menuNuevo.Size = new System.Drawing.Size(54, 20);
+            this.menuNuevo.Text = "Nuevo";
             // 
-            // txtUsuario
+            // menuAbrir
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(192, 37);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(177, 29);
-            this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "programadornovato";
+            this.menuAbrir.Name = "menuAbrir";
+            this.menuAbrir.Size = new System.Drawing.Size(45, 20);
+            this.menuAbrir.Text = "Abrir";
             // 
-            // txtPass
+            // menuCerrar
             // 
-            this.txtPass.Location = new System.Drawing.Point(192, 83);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(177, 29);
-            this.txtPass.TabIndex = 3;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(278, 129);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(91, 36);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(73, 129);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(91, 36);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.menuCerrar.Name = "menuCerrar";
+            this.menuCerrar.Size = new System.Drawing.Size(51, 20);
+            this.menuCerrar.Text = "Cerrar";
             // 
             // Formulario1
             // 
@@ -99,23 +75,22 @@ namespace AplicacionWindowsForm
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::AplicacionWindowsForm.Properties.Resources.logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(684, 577);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(784, 761);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(500, 500);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 800);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "Formulario1";
             this.Text = "Formulario 1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,12 +98,10 @@ namespace AplicacionWindowsForm
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuNuevo;
+        private System.Windows.Forms.ToolStripMenuItem menuAbrir;
+        private System.Windows.Forms.ToolStripMenuItem menuCerrar;
     }
 }
 

@@ -17,26 +17,16 @@ namespace AplicacionWindowsForm
             InitializeComponent();
         }
 
-
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            if (txtUsuario.Text == "programadornovato" && txtPass.Text == "123")
-            {
-                //MessageBox.Show("Humano valido");
+            if (e.ClickedItem.Text == "Nuevo") {
                 Ventana2 v2 = new Ventana2();
+                v2.MdiParent = this;
                 v2.Show();
-                this.Hide();
             }
-            else {
-                txtUsuario.Text = "programadornovato";
-                txtPass.Text = "123";
-                MessageBox.Show("Humano invalido");
+            if (e.ClickedItem.Text == "Cerrar") {
+                this.Close();
             }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

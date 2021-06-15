@@ -116,7 +116,7 @@ namespace AplicacionWindowsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 766);
+            this.ClientSize = new System.Drawing.Size(575, 589);
             this.Controls.Add(this.imgPasarelas);
             this.Controls.Add(this.imgProductos);
             this.Controls.Add(this.lisProductos);
