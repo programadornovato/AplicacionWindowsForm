@@ -10,58 +10,32 @@ namespace AplicacionWindowsForm
 {
     public partial class Ventana2 : Form
     {
+        int con = 0;
         public Ventana2()
         {
             InitializeComponent();
-            lblResultado.Text = "";
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            float total = 0;
-            string pasarela = "";
-            int conProd = 0;
-            int conPas = 0;
-            if (lisProductos.Text == "Tenis") {
-                total = total + 1000;
-                conProd++;
-            }
-            if (lisProductos.Text == "Camisas") {
-                total = total + 500;
-                conProd++;
-            }
-            if (comPasarelas.Text == "Tarjeta") {
-                pasarela = "Pago con Tarjeta ";
-                conPas++;
-            }
-            if (comPasarelas.Text == "Paypal") {
-                pasarela = "Pago con Paypal ";
-                conPas++;
-            }
-            if (conProd > 0 && conPas > 0)
+            pbCarga.Minimum = 0;
+            pbCarga.Maximum = 100;
+            if (con < 100)
             {
-                lblResultado.Text = pasarela + total;
+                con++;
             }
-            else {
-                lblResultado.Text = "Humano selecciona un producto y una pasarela";
+            pbCarga.Value = con;
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblPosicion.Text = "X="+e.X+" Y="+e.Y;
+            pbCarga.Minimum = 0;
+            pbCarga.Maximum = 100;
+            if (con < 100) {
+                con++;
             }
-        }
-
-        private void btnRegresa_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Formulario1 f1 = new Formulario1();
-            f1.Show();
-        }
-
-        private void lisProductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            imgProductos.ImageLocation= "C:/Users/eugenio/Pictures/C#/"+ lisProductos.Text+".png";
-        }
-
-        private void comPasarelas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            imgPasarelas.ImageLocation = "C:/Users/eugenio/Pictures/C#/" + comPasarelas.Text + ".png";
+            pbCarga.Value = con;
         }
     }
 }
