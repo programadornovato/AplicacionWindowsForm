@@ -29,60 +29,20 @@ namespace AplicacionWindowsForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.chkTenis = new System.Windows.Forms.CheckBox();
-            this.chkCamisa = new System.Windows.Forms.CheckBox();
-            this.radPaypal = new System.Windows.Forms.RadioButton();
-            this.radTarjeta = new System.Windows.Forms.RadioButton();
             this.btnPagar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.btnRegresa = new System.Windows.Forms.Button();
+            this.comPasarelas = new System.Windows.Forms.ComboBox();
+            this.lisProductos = new System.Windows.Forms.ListBox();
+            this.imgProductos = new System.Windows.Forms.PictureBox();
+            this.imgPasarelas = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPasarelas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // chkTenis
-            // 
-            this.chkTenis.AutoSize = true;
-            this.chkTenis.Location = new System.Drawing.Point(119, 49);
-            this.chkTenis.Name = "chkTenis";
-            this.chkTenis.Size = new System.Drawing.Size(143, 29);
-            this.chkTenis.TabIndex = 0;
-            this.chkTenis.Text = "Tenis (1,000)";
-            this.chkTenis.UseVisualStyleBackColor = true;
-            // 
-            // chkCamisa
-            // 
-            this.chkCamisa.AutoSize = true;
-            this.chkCamisa.Location = new System.Drawing.Point(119, 104);
-            this.chkCamisa.Name = "chkCamisa";
-            this.chkCamisa.Size = new System.Drawing.Size(145, 29);
-            this.chkCamisa.TabIndex = 1;
-            this.chkCamisa.Text = "Camisa (500)";
-            this.chkCamisa.UseVisualStyleBackColor = true;
-            // 
-            // radPaypal
-            // 
-            this.radPaypal.AutoSize = true;
-            this.radPaypal.Location = new System.Drawing.Point(416, 49);
-            this.radPaypal.Name = "radPaypal";
-            this.radPaypal.Size = new System.Drawing.Size(89, 29);
-            this.radPaypal.TabIndex = 2;
-            this.radPaypal.TabStop = true;
-            this.radPaypal.Text = "Paypal";
-            this.radPaypal.UseVisualStyleBackColor = true;
-            // 
-            // radTarjeta
-            // 
-            this.radTarjeta.AutoSize = true;
-            this.radTarjeta.Location = new System.Drawing.Point(416, 104);
-            this.radTarjeta.Name = "radTarjeta";
-            this.radTarjeta.Size = new System.Drawing.Size(89, 29);
-            this.radTarjeta.TabIndex = 3;
-            this.radTarjeta.TabStop = true;
-            this.radTarjeta.Text = "Tarjeta";
-            this.radTarjeta.UseVisualStyleBackColor = true;
             // 
             // btnPagar
             // 
-            this.btnPagar.Location = new System.Drawing.Point(416, 191);
+            this.btnPagar.Location = new System.Drawing.Point(412, 430);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(89, 35);
             this.btnPagar.TabIndex = 4;
@@ -93,7 +53,7 @@ namespace AplicacionWindowsForm
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(119, 273);
+            this.lblResultado.Location = new System.Drawing.Point(119, 509);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(122, 25);
             this.lblResultado.TabIndex = 5;
@@ -101,7 +61,7 @@ namespace AplicacionWindowsForm
             // 
             // btnRegresa
             // 
-            this.btnRegresa.Location = new System.Drawing.Point(119, 191);
+            this.btnRegresa.Location = new System.Drawing.Point(119, 431);
             this.btnRegresa.Name = "btnRegresa";
             this.btnRegresa.Size = new System.Drawing.Size(110, 34);
             this.btnRegresa.TabIndex = 6;
@@ -109,34 +69,78 @@ namespace AplicacionWindowsForm
             this.btnRegresa.UseVisualStyleBackColor = true;
             this.btnRegresa.Click += new System.EventHandler(this.btnRegresa_Click);
             // 
+            // comPasarelas
+            // 
+            this.comPasarelas.FormattingEnabled = true;
+            this.comPasarelas.Items.AddRange(new object[] {
+            "Tarjeta",
+            "Paypal"});
+            this.comPasarelas.Location = new System.Drawing.Point(380, 74);
+            this.comPasarelas.Name = "comPasarelas";
+            this.comPasarelas.Size = new System.Drawing.Size(121, 33);
+            this.comPasarelas.TabIndex = 7;
+            this.comPasarelas.SelectedIndexChanged += new System.EventHandler(this.comPasarelas_SelectedIndexChanged);
+            // 
+            // lisProductos
+            // 
+            this.lisProductos.FormattingEnabled = true;
+            this.lisProductos.ItemHeight = 25;
+            this.lisProductos.Items.AddRange(new object[] {
+            "Tenis",
+            "Camisas"});
+            this.lisProductos.Location = new System.Drawing.Point(97, 74);
+            this.lisProductos.Name = "lisProductos";
+            this.lisProductos.Size = new System.Drawing.Size(120, 79);
+            this.lisProductos.TabIndex = 8;
+            this.lisProductos.SelectedIndexChanged += new System.EventHandler(this.lisProductos_SelectedIndexChanged);
+            // 
+            // imgProductos
+            // 
+            this.imgProductos.Location = new System.Drawing.Point(97, 191);
+            this.imgProductos.Name = "imgProductos";
+            this.imgProductos.Size = new System.Drawing.Size(174, 125);
+            this.imgProductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgProductos.TabIndex = 9;
+            this.imgProductos.TabStop = false;
+            // 
+            // imgPasarelas
+            // 
+            this.imgPasarelas.Location = new System.Drawing.Point(380, 191);
+            this.imgPasarelas.Name = "imgPasarelas";
+            this.imgPasarelas.Size = new System.Drawing.Size(174, 125);
+            this.imgPasarelas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgPasarelas.TabIndex = 9;
+            this.imgPasarelas.TabStop = false;
+            // 
             // Ventana2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1199, 766);
+            this.Controls.Add(this.imgPasarelas);
+            this.Controls.Add(this.imgProductos);
+            this.Controls.Add(this.lisProductos);
+            this.Controls.Add(this.comPasarelas);
             this.Controls.Add(this.btnRegresa);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnPagar);
-            this.Controls.Add(this.radTarjeta);
-            this.Controls.Add(this.radPaypal);
-            this.Controls.Add(this.chkCamisa);
-            this.Controls.Add(this.chkTenis);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name = "Ventana2";
             this.Text = "Ventana2";
+            ((System.ComponentModel.ISupportInitialize)(this.imgProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPasarelas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox chkTenis;
-        private System.Windows.Forms.CheckBox chkCamisa;
-        private System.Windows.Forms.RadioButton radPaypal;
-        private System.Windows.Forms.RadioButton radTarjeta;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Button btnRegresa;
+        private System.Windows.Forms.ComboBox comPasarelas;
+        private System.Windows.Forms.ListBox lisProductos;
+        private System.Windows.Forms.PictureBox imgProductos;
+        private System.Windows.Forms.PictureBox imgPasarelas;
     }
 }

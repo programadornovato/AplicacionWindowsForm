@@ -20,32 +20,31 @@ namespace AplicacionWindowsForm
         {
             float total = 0;
             string pasarela = "";
-            int conCheck = 0;
-            int conRad = 0;
-            if (chkTenis.Checked == true) {
+            int conProd = 0;
+            int conPas = 0;
+            if (lisProductos.Text == "Tenis") {
                 total = total + 1000;
-                conCheck++;
+                conProd++;
             }
-            if (chkCamisa.Checked == true) {
+            if (lisProductos.Text == "Camisas") {
                 total = total + 500;
-                conCheck++;
+                conProd++;
             }
-            if (radTarjeta.Checked == true) {
+            if (comPasarelas.Text == "Tarjeta") {
                 pasarela = "Pago con Tarjeta ";
-                conRad++;
+                conPas++;
             }
-            if (radPaypal.Checked == true) {
+            if (comPasarelas.Text == "Paypal") {
                 pasarela = "Pago con Paypal ";
-                conRad++;
+                conPas++;
             }
-            if (conCheck > 0 && conRad > 0)
+            if (conProd > 0 && conPas > 0)
             {
                 lblResultado.Text = pasarela + total;
             }
             else {
-                lblResultado.Text = "Humano debes seleccionar por lo menos un producto y una pasarela";
+                lblResultado.Text = "Humano selecciona un producto y una pasarela";
             }
-            
         }
 
         private void btnRegresa_Click(object sender, EventArgs e)
@@ -53,6 +52,16 @@ namespace AplicacionWindowsForm
             this.Hide();
             Formulario1 f1 = new Formulario1();
             f1.Show();
+        }
+
+        private void lisProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            imgProductos.ImageLocation= "C:/Users/eugenio/Pictures/C#/"+ lisProductos.Text+".png";
+        }
+
+        private void comPasarelas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            imgPasarelas.ImageLocation = "C:/Users/eugenio/Pictures/C#/" + comPasarelas.Text + ".png";
         }
     }
 }
